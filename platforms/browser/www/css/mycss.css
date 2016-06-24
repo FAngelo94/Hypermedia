@@ -1,0 +1,30 @@
+.deviceCategories{
+	width:150px;
+	height:150px;
+}
+
+.img-responsive{
+	width:330px;
+	height:550px;
+}
+
+.priceNotPromo{
+	text-decoration: line-through;
+}
+
+.specification{
+	text-align:center;
+	font-size: 28px;
+}
+
+.img-device{
+	width:200px;
+	height:350px;
+}
+
+.titleDevice{
+	text-align:center;
+	font-size: 40px;
+	color:#ffffff;
+	text-transform: uppercase;
+}
