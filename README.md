@@ -1,27 +1,69 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
+# Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
 
-[Creative](http://startbootstrap.com/template-overviews/creative/) is a one page creative theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+A PhoneGap Hello World template
 
-## Getting Started
+## Usage
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/creative/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-creative.git`
-* Fork the repo
+#### PhoneGap CLI
 
-## Bugs and Issues
+The hello-world template is the default when you create a new application using the [phonegap-cli][phonegap-cli-url].
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-creative/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/creative/).
+    phonegap create my-app
 
-## Creator
+Create an app using this template specifically:
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+    phonegap create my-app --template hello-world
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+To see a list of other available PhoneGap templates:
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+    phonegap template list
 
-## Copyright and License
+## [config.xml][config-xml]
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-creative/blob/gh-pages/LICENSE) license.
+#### android-minSdkVersion (Android only)
+
+Minimum SDK version supported on the target device. Maximum version is blank by default.
+
+This template sets the minimum to `14`.
+
+    <preference name="android-minSdkVersion" value="14" />
+
+#### &lt;access ...&gt; (All)
+
+This template defaults to wide open access.
+
+    <access origin="*" />
+
+It is strongly encouraged that you restrict access to external resources in your application before releasing to production.
+
+For more information on whitelist configuration, see the [Cordova Whitelist Guide][cordova-whitelist-guide] and the [Cordova Whitelist Plugin documentation][cordova-plugin-whitelist]
+
+## [www/index.html][index-html]
+
+#### Content Security Policy (CSP)
+
+The default CSP is similarly open:
+
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+Much like the access tag above, you are strongly encouraged to use a more restrictive CSP in production.
+
+A good starting point declaration might be:
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
+
+For more information on the Content Security Policy, see the [section on CSP in the Cordova Whitelist Plugin documentation][cordova-plugin-whitelist-csp].
+
+Another good resource for generating a good CSP declaration is [CSP is Awesome][csp-is-awesome]
+
+
+[phonegap-cli-url]: http://github.com/phonegap/phonegap-cli
+[cordova-app]: http://github.com/apache/cordova-app-hello-world
+[bithound-img]: https://www.bithound.io/github/phonegap/phonegap-app-hello-world/badges/score.svg
+[bithound-url]: https://www.bithound.io/github/phonegap/phonegap-app-hello-world
+[config-xml]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/config.xml
+[index-html]: https://github.com/phonegap/phonegap-template-hello-world/blob/master/www/index.html
+[cordova-whitelist-guide]: https://cordova.apache.org/docs/en/dev/guide/appdev/whitelist/index.html
+[cordova-plugin-whitelist]: http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist
+[cordova-plugin-whitelist-csp]: http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-whitelist#content-security-policy
+[csp-is-awesome]: http://cspisawesome.com
