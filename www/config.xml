@@ -163,18 +163,6 @@
 	<!-- Allow links to web pages to open in a browser -->
 
 
-<!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that 
-    * CSS only from the same origin and inline styles,
-    * scripts only from the same origin and inline styles, and eval()
--->
-<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-
-<!-- Allows XHRs only over HTTPS on the same domain. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:">
-
-<!-- Allow iframe to https://cordova.apache.org/ -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://cordova.apache.org">
-
 	<allow-intent href="*" />
     
 	<platform name="android">
