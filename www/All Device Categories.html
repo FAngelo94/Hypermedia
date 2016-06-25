@@ -33,11 +33,11 @@
 			function setup(){
 				$.ajax({
 					url: "/php/AllDeviceCategories.php", //Relative or absolute path to response.php file
-					dataType: "json",
+					//dataType: "json",
 					success: function(data) {
 						$(".row").html
 						(
-							data["query"]
+							data
 						);
 					},
 					error: function(){
