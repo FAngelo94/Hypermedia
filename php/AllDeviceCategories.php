@@ -1,6 +1,6 @@
 <?php
 	// dichiariamo alcune importanti variabili per collegarci al database 
-	$DBhost = "localhost";
+	/*$DBhost = "localhost";
 	$DBuser = "bigbandroid";
 	$DBpass = "";
 	$DBName = "my_bigbandroid";
@@ -47,9 +47,9 @@
 				<p class='text-muted'>
 					Discover our best offerts</p>
 			</div>
-		</a></div>";
-
-	$return["query"]=$s;
+		</a></div>";*/
+		
+	$s="ciao";
 	
 	echo $s;
 ?>
