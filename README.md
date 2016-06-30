@@ -1,27 +1,59 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
 
-[Creative](http://startbootstrap.com/template-overviews/creative/) is a one page creative theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
-## Getting Started
+Hypermedia Applications and Multimedia, 
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/creative/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-creative.git`
-* Fork the repo
+prof. Franca Garzotto, year 2015/2016,
 
-## Bugs and Issues
+Technology project: TIM Website
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-creative/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/creative/).
+Group: BigbAndroid
 
-## Creator
+˜Angelo Falci, Alessio Nava, Michelangelo Medori˜
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+CONTENTS:
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+1)Website source code
 
-## Copyright and License
+2)Fully populated database 
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-creative/blob/gh-pages/LICENSE) license.
+3)P-IDM Schema
+
+4)Android Mobile app (.apk)
+
+
+NOTES ON THE WEBSITE:
+
+To develop the website we used the "Creative" Bootstrap Template that uses several Bootstrap Frameworks (including premade JavaScript,  JQuery functions, ecc).
+
+All the data is queered from the database  using php functions inside the html pages  (the php folder  contains the php file to connect to the database, used by all the pages and the functions to populate the db).
+
+All the images we used are organized inside the img folder.
+
+All the JavaScript functions are inside the js folder.
+
+Some of the pages of the website are not developed:
+
+1)The "buy" button inside the  device page  ,the  "buy" and "faq" buttons inside the single  SL Service page and  the  assistance@tim.it link at the bottom of the  homepage DO NOT LEAD anywhere
+
+
+2)The category Tv&Smart Living of device categories DO NOT contain anything, which means that the link  "Tv and Smart Living" on the Devices Categories page IS NOT an active link.
+
+It's not possible to graphically distinguish between the active and not active links on the website.
+
+We inserted the PROMO devices/SL services and the HIGHLIGHTS Assistance services as  categories on their own inside the devices/SL services/Assistance Services categories pages.
+All the rest of the website structure reflects the one on the P-IDM Schema and the Mock-ups (already delivered) except from the graphics of the pages which is quite different from the Mock-ups one. 
+
+
+
+NOTES ON THE DATABASE:
+
+The database is filled with random data related to the devices, smart life services, assistance services, and all the info pages (who we are ecc.)
+
+For each device  there is a list of SL/Assistance services available for that device. Those Services are randomly chosen (through a random php function inside the php folder) among the whole list of services contained into the db. The same is valid for the list of available devices inside  each SL/Assistance Services page.
+
+
+NOTES ON THE APK:
+The mobile  app (Android .apk app) was created connecting PhonGap Build to the GitHub repository, and contains all the pages that are on the website desktop version.
+
+
