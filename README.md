@@ -50,10 +50,10 @@ NOTES ON THE DATABASE:
 
 The database is filled with random data related to the devices, smart life services, assistance services, and all the info pages (who we are ecc.)
 
-For each device  there is a list of Sl/Assistance services available for that device. Those Services are randomly chosen (through a random php function inside the php folder) among the whole list of services contained into the db. The same is valid for the list of available devices inside  each Sl/Assistance Services page.
+For each device  there is a list of SL/Assistance services available for that device. Those Services are randomly chosen (through a random php function inside the php folder) among the whole list of services contained into the db. The same is valid for the list of available devices inside  each SL/Assistance Services page.
 
 
 NOTES ON THE APK:
-The mobile  app (Android .apk app) was created connecting PhonGap Build to the GitHub repository, and contains all the pages that are on the website desktop version
+The mobile  app (Android .apk app) was created connecting PhonGap Build to the GitHub repository, and contains all the pages that are on the website desktop version.
 
 
