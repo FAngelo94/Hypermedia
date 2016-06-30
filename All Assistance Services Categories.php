@@ -46,26 +46,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html"><img height="30px" src="img/logo_tim.png"/></a>
+                <a class="navbar-brand page-scroll" href="http://bigbandroid.altervista.org/index.html"><img height="30px" src="img/logo_tim.png"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="All Device Categories.php" >Devices</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Device Categories.php" >Devices</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All SL Services Categories.php">Services</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All SL Services Categories.php">Services</a>
                     </li>
                     <li class="active">
-                        <a class="page-scroll" href="All Assistance Services Categories.php">Assistance</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Assistance Services Categories.php">Assistance</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="Group of Telecom Italia.php">Group</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Group of Telecom Italia.php">Group</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="Who We Are.php">Who we are</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Who We Are.php">Who we are</a>
                     </li>
                 </ul>
             </div>
@@ -87,18 +87,10 @@
 	<div class="container">
             <div class="row">
 			<?php
-				/* dichiariamo alcune importanti variabili per collegarci al database */
-				$DBhost = "localhost";
-				$DBuser = "bigbandroid";
-				$DBpass = "";
-				$DBName = "my_bigbandroid";
+				include 'php/dbAccess.php';
 
 				/* specifichiamo il nome della nostra tabella */
 				$table = "AssistanceServicesCategory";
-
-				/* Connettiamoci al database */
-				mysql_connect($DBhost,$DBuser,$DBpass) or die("Impossibile collegarsi al server");
-				@mysql_select_db("$DBName") or die("Impossibile connettersi al database $DBName");
 
 				/* impostiamo la query e cerchiamo solo le amiche donne...*/
 				$sqlquery = "SELECT * FROM $table";
@@ -113,13 +105,12 @@
 					$description = mysql_result($result,$i,"Description");
 					$icon=mysql_result($result,$i,"Icon");
 					$description=nl2br($description);
-					
-					$sendName=str_replace(' ', '', $name);
+
 			?>
 					
-					<div class="col-lg-3 col-md-6 text-center"><a href="Assistance Service Category.php?category=<?echo $sendName;?>">
+					<div class="col-lg-3 col-md-6 text-center"><a href="http://bigbandroid.altervista.org/Assistance Service Category.php?category=<?echo $name;?>">
 						<div class="service-box">
-							<i class="fa fa-4x text-primary sr-icons"><img class="deviceCategories" src="img/allAssistanceServicesCategories/<?echo $icon; ?>.png"/></i>
+							<i class="fa fa-4x text-primary sr-icons"><img class="iconCategories" src="img/allAssistanceServicesCategories/<?echo $icon; ?>.png"/></i>
 							<h3><?echo $name;?></h3>
 							<p class="text-muted"><?echo $description;?></p>
 						</div>
@@ -129,10 +120,10 @@
 					$i++;
 				}
 			?>		
-					<div class="col-lg-3 col-md-6 text-center"><a href="Device Category.php?category=promo">
+					<div class="col-lg-3 col-md-6 text-center"><a href="http://bigbandroid.altervista.org/Assistance Service Category.php?category=Highlights">
 						<div class="service-box">
-							<i class="fa fa-4x text-primary sr-icons"><img class="deviceCategories" src="img/allDeviceCategories/discount.png"/></i>
-							<h3>Promo Assistance Services</h3>
+							<i class="fa fa-4x text-primary sr-icons"><img class="iconCategories" src="img/allAssistanceServicesCategories/highlight.png"/></i>
+							<h3>Highlight Assistance Services</h3>
 							<p class="text-muted"></p>
 						</div>
 					</a></div>

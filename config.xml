@@ -45,7 +45,7 @@
     <!--<preference name="auto-hide-splash-screen" value="false" />
     <preference name="SplashScreenDelay" value="500000" />-->
 
-    <gap:splash src="splash.png" />
+    <gap:splash src="img/logo_apk.png" />
 
     <!-- iPhone and iPod touch -->
     <gap:splash src="img/splash/Default.png" gap:platform="ios" width="320" height="480" />

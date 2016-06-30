@@ -24,9 +24,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
-	
-	<!-- My CSS -->
-    <link rel="stylesheet" href="css/mycss.css" type="text/css">
+	<link rel="stylesheet" href="css/mycss.css" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,26 +47,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html"><img height="30px" src="img/logo_tim.png"/></a>
+                <a class="navbar-brand page-scroll" href="http://bigbandroid.altervista.org/index.html"><img height="30px" src="img/logo_tim.png"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" >
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li  class="active">
-                        <a class="page-scroll" href="All Device Categories.php" >Devices</a>
+                    <li>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Device Categories.php" >Devices</a>
+                    </li>
+                    <li class="active">
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All SL Services Categories.php">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All SL Services Categories.php">Services</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Assistance Services Categories.php">Assistance</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All Assistance Services Categories.php">Assistance</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="Group of Telecom Italia.php">Group</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Group of Telecom Italia.php">Group</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="Who We Are.php">Who we are</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Who We Are.php">Who we are</a>
                     </li>
                 </ul>
             </div>
@@ -76,170 +74,101 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <section class="no-padding" id="portfolio">
-		<aside class="bg-dark">
-			<div class="container text-center">
-				<div class="call-to-action">
-					<h2>Find out the offer that suits you the best!</h2>
-					
-				</div>
-			</div>
-		</aside>
-	
+	    <section class="no-padding" id="portfolio">
+	<aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2><?php $category=$_GET['category']; echo $category; ?></h2>       
+            </div>
+        </div>
+    </aside>
         <div class="container-fluid">
-		 
-		
             <div class="row no-gutter popup-gallery">
 			<?php
-				/* dichiariamo alcune importanti variabili per collegarci al database */
-				$DBhost = "localhost";
-				$DBuser = "bigbandroid";
-				$DBpass = "";
-				$DBName = "my_bigbandroid";
-				/* Connettiamoci al database */
-				mysql_connect($DBhost,$DBuser,$DBpass) or die("Impossibile collegarsi al server");
-				@mysql_select_db("$DBName") or die("Impossibile connettersi al database $DBName");
+				include 'php/dbAccess.php';
 
-				/* specifichiamo il nome della nostra tabella $numero1=$_GET['numero1'];*/
-				$category=$_GET['category'];
-				if($category!="promo")
+				/* specifichiamo il nome della nostra tabella */
+				$table = "SLServices";
+
+				/* impostiamo la query e cerchiamo solo le amiche donne...*/
+				if($category!="Promotion")
 				{
-					$table = $category;
-
-					/* impostiamo la query e cerchiamo solo le amiche donne...*/
-					$sqlquery = "SELECT * FROM $table";
+					$sqlquery = "SELECT * FROM $table WHERE Category='".$category."'";
 					$result = mysql_query($sqlquery);
 					$number = mysql_num_rows($result);
 					
-					$i = 0;
-					while ($number > $i) 
-					{
-						$code= mysql_result($result,$i,"Id");
-						$name = mysql_result($result,$i,"Name");
-						$price=mysql_result($result,$i,"Price");
-						$checkPromo=mysql_result($result,$i,"Promotion");
-						$pricePromo=mysql_result($result,$i,"PricePromo");
-				
-						if($checkPromo==1)
-						{
-							?>
+					
+					$i=0;
+					while($i<$number){
+						$title=mysql_result($result,$i,"Title");
+						$description=mysql_result($result,$i,"Description");
+						?>
+						<a href="http://bigbandroid.altervista.org/SLService.php?slservice=<?echo $title;?>">
+						<div class="col-lg-4 col-sm-6">
+							<div class="portfolio-box">
+								<center>
+									<img src="img/allSLServicesCategories/<?echo $category;?>/<? echo $title.".png" ?>" class="img-responsive" alt="">
+								</center>
+								<div class="portfolio-box-caption">
+									<div class="portfolio-box-caption-content">
+									<?
+									echo "<h1>".$title."</h1>";
+									?>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
 								
-								<a href="Device.php?category=<?echo $category;?>&codeDevice=<?echo $code;?>&name=<?echo $name;?>">
-								<div class="col-lg-4 col-sm-6">
-									<div class="portfolio-box">
-										<center>
-											<img src="img/allDeviceCategories/<?echo $category;?>/<?echo $name.".0"; ?>.jpg" class="img-responsive" alt="">
-										</center>
-										<div class="portfolio-box-caption">
-											<div class="portfolio-box-caption-content">
-											
-												<div class="project-category text-faded">
-
-													<? echo $name;?> </br>
-													<? $pricePromo=$pricePromo."EUR";
-														echo $pricePromo; 
-													?>
-													<p class="priceNotPromo"><? $price=$price."EUR";
-														echo $price; 
-													?></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								</a>
-							<?
-						}
-						else
-						{
-							?>
-								<a href="Device.php?category=<?echo $category;?>&codeDevice=<?echo $code;?>&name=<?echo $name;?>">
-								<div class="col-lg-4 col-sm-6">
-									<div class="portfolio-box">
-										<center>
-											<img src="img/allDeviceCategories/<?echo $category;?>/<?echo $name.".0"; ?>.jpg" class="img-responsive" alt="">
-										</center>
-										<div class="portfolio-box-caption">
-											<div class="portfolio-box-caption-content">
-												<div class="project-category text-faded">
-													<? echo $name;?> </br>
-													<? $price=$price."EUR";
-														echo $price; 
-													?>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								</a>
-
-							<?
-						}
-					$i++;
-					}
-				}
-				else
-				{//I print only the promo device
-					$sqlquery = "SELECT * FROM DeviceCategory";
-					$result = mysql_query($sqlquery);
-					$number = mysql_num_rows($result);
-					 
-					$i=0;   
-					while($number > $i) 
-					{
-						$nameCategory=mysql_result($result,$i,"Name");
-						$nameCategory=str_replace(' ', '', $nameCategory);
-						$queryCategory = "SELECT * FROM $nameCategory";
-						$resultCategory = mysql_query($queryCategory);
-						$numberCategory = mysql_num_rows($resultCategory);
-						$j=0;
-						while($numberCategory > $j)
-						{
-							$nameDevice=mysql_result($resultCategory,$j,"Name");
-							$code=mysql_result($resultCategory,$j,"Id"); 
-							$priceDevice=mysql_result($resultCategory,$j,"Price");
-							$pricePromo=mysql_result($resultCategory,$j,"PricePromo");
-							$isPromo=mysql_result($resultCategory,$j,"Promotion");
-							if($isPromo==1)
-							{
-								?>
-									<a href="Device.php?category=<?echo $nameCategory;?>&codeDevice=<?echo $code;?>&name=<?echo $nameDevice;?>">
-									<div class="col-lg-4 col-sm-6">
-										<div class="portfolio-box">
-											<center>
-												<img src="img/allDeviceCategories/<?echo $nameCategory;?>/<?echo $nameDevice.".0"; ?>.jpg" class="img-responsive" alt="">
-											</center>
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-												
-													<div class="project-category text-faded">
-
-														<? echo $nameDevice;?> </br>
-														<? $pricePromo=$pricePromo."EUR";
-															echo $pricePromo; 
-														?>
-														<p class="priceNotPromo"><? $priceDevice=$priceDevice."EUR";
-															echo $priceDevice; 
-														?></p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									</a>
-								<?
-							}
-							$j++;
-						}
+						<?
+						
 						$i++;
 					}
 				}
-			?>	
+				else
+				{
+					$sqlquery = "SELECT * FROM $table WHERE Promotion=1";
+					$result = mysql_query($sqlquery);
+					$number = mysql_num_rows($result);
+					
+					
+					$i=0;
+					while($i<$number){
+						$category=mysql_result($result,$i,"Category");
+						$title=mysql_result($result,$i,"Title");
+						$description=mysql_result($result,$i,"Description");
+						?>
+						<a href="http://bigbandroid.altervista.org/SLService.php?slservice=<?echo $title;?>">
+						<div class="col-lg-4 col-sm-6">
+							<div class="portfolio-box">
+								<center>
+									<img src="img/allSLServicesCategories/<?echo $category;?>/<? echo $title.".png" ?>" class="img-responsive" alt="">
+								</center>
+								<div class="portfolio-box-caption">
+									<div class="portfolio-box-caption-content">
+									<?
+									echo "<h1>".$title."</h1>";
+									?>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
+								
+						<?
+						
+						$i++;
+					}
+				}
+			?>
+			
             </div>
-        </div>
+			</div>
     </section>
 
+
+
+	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -251,8 +180,6 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
-
-    
 
 </body>
 

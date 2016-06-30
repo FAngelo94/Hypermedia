@@ -49,26 +49,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html"><img height="30px" src="img/logo_tim.png"/></a>
+                <a class="navbar-brand page-scroll" href="http://bigbandroid.altervista.org/index.html"><img height="30px" src="img/logo_tim.png"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" >
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li  class="active">
-                        <a class="page-scroll" href="All Device Categories.php" >Devices</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Device Categories.php" >Devices</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All SL Services Categories.php">Services</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All SL Services Categories.php">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All Assistance Services Categories.php">Assistance</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Assistance Services Categories.php">Assistance</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="Group of Telecom Italia.php">Group</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Group of Telecom Italia.php">Group</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="Who We Are.php">Who we are</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Who We Are.php">Who we are</a>
                     </li>
                 </ul>
             </div>
@@ -85,14 +85,7 @@
 		
             <div class="row no-gutter popup-gallery">
 			<?php
-				/* dichiariamo alcune importanti variabili per collegarci al database */
-				$DBhost = "localhost";
-				$DBuser = "bigbandroid";
-				$DBpass = "";
-				$DBName = "my_bigbandroid";
-				/* Connettiamoci al database */
-				mysql_connect($DBhost,$DBuser,$DBpass) or die("Impossibile collegarsi al server");
-				@mysql_select_db("$DBName") or die("Impossibile connettersi al database $DBName");
+				include 'php/dbAccess.php';
 
 				/* specifichiamo il nome della nostra tabella $numero1=$_GET['numero1'];*/
 				$category=$_GET['category'];
@@ -118,7 +111,7 @@
 						{
 							?>
 								
-								<a href="Device.php?category=<?echo $category;?>&codeDevice=<?echo $code;?>&name=<?echo $name;?>">
+								<a href="http://bigbandroid.altervista.org/Device.php?category=<?echo $category;?>&name=<?echo $name;?>">
 								<div class="col-lg-4 col-sm-6">
 									<div class="portfolio-box">
 										<center>
@@ -147,7 +140,7 @@
 						else
 						{
 							?>
-								<a href="Device.php?category=<?echo $category;?>&codeDevice=<?echo $code;?>&name=<?echo $name;?>">
+								<a href="http://bigbandroid.altervista.org/Device.php?category=<?echo $category;?>&name=<?echo $name;?>">
 								<div class="col-lg-4 col-sm-6">
 									<div class="portfolio-box">
 										<center>
@@ -197,7 +190,7 @@
 							if($isPromo==1)
 							{
 								?>
-									<a href="Device.php?category=<?echo $nameCategory;?>&codeDevice=<?echo $code;?>&name=<?echo $nameDevice;?>">
+									<a href="http://bigbandroid.altervista.org/Device.php?category=<?echo $nameCategory;?>&name=<?echo $nameDevice;?>">
 									<div class="col-lg-4 col-sm-6">
 										<div class="portfolio-box">
 											<center>

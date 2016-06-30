@@ -46,26 +46,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="index.html"><img height="30px" src="img/logo_tim.png"/></a>
+                <a class="navbar-brand page-scroll" href="http://bigbandroid.altervista.org/index.html"><img height="30px" src="img/logo_tim.png"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="All Device Categories.php" >Devices</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Device Categories.php" >Devices</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All SL Services Categories.php">Services</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All SL Services Categories.php">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="All Assistance Services Categories.php">Assistance</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/All Assistance Services Categories.php">Assistance</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="Group of Telecom Italia.php">Group</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Group of Telecom Italia.php">Group</a>
                     </li>
 					<li class="active">
-                        <a class="page-scroll" href="Who We Are.php">Who we are</a>
+                        <a class="page-scroll" href="http://bigbandroid.altervista.org/Who We Are.php">Who we are</a>
                     </li>
                 </ul>
             </div>
@@ -89,18 +89,10 @@
         <div class="container">
             <div class="row">
 			<?php
-				/* dichiariamo alcune importanti variabili per collegarci al database */
-				$DBhost = "localhost";
-				$DBuser = "bigbandroid";
-				$DBpass = "";
-				$DBName = "my_bigbandroid";
+				include 'php/dbAccess.php';
 
 				/* specifichiamo il nome della nostra tabella */
 				$table = "GroupOfTelecom";
-
-				/* Connettiamoci al database */
-				mysql_connect($DBhost,$DBuser,$DBpass) or die("Impossibile collegarsi al server");
-				@mysql_select_db("$DBName") or die("Impossibile connettersi al database $DBName");
 
 				/* impostiamo la query e cerchiamo solo le amiche donne...*/
 				$sqlquery = "SELECT * FROM $table";
@@ -116,32 +108,20 @@
 					$description=nl2br($description);
 					
 					$sendName=str_replace(' ', '', $name);
-			?>
+			?>				
+			<section class="bg-primary2" id="innovation">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 text-center">
+						<img width="100%" height="450" align="center"src="img/whoWeAre/<?echo $icon; ?>.png"/>
+							 <!--class="section-heading"--> <h3 class="whoWeAre" ><?echo $name;?></h3>
+							<hr class="light2">
+							<p class="whoWeAre2"><?echo $description;?></p>
 					
-					
-					
-					
-					
-					
-					
-					<section class="bg-primary2" id="innovation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-				<img width="100%" height="450" align="center"src="img/whoWeAre/<?echo $icon; ?>.png"/>
-                     <!--class="section-heading"--> <h3 class="whoWeAre" ><?echo $name;?></h3>
-                    <hr class="light2">
-                    <p class="whoWeAre2"><?echo $description;?></p>
-            
-                </div>
-            </div>
-        </div>
-    </section>
-					
-					
-					
-					
-				
+						</div>
+					</div>
+				</div>
+			</section>		
 			<?php 
 					$i++;
 				}
@@ -151,75 +131,6 @@
             </div>
 			</div>
     </section>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!--
-	
-    <section class="bg-primary2" id="innovation">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Innovation</h2>
-                    <hr class="light2">
-                    <p class="text-faded2">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            
-                </div>
-            </div>
-        </div>
-    </section>
-
-	    <section class="bg-primary" id="testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Testimonials</h2>
-                    <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-	
-	    <section class="bg-primary2" id="projects">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Projects</h2>
-                    <hr class="light2">
-                    <p class="text-faded2">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-            
-                </div>
-            </div>
-        </div>
-    </section>   -->
 	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
