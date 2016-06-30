@@ -120,6 +120,7 @@
 				<p>Price  in Promotion for Month= <?echo $pricePromo;?> EUR</p>
 			<?}?>
 			<a class="btn btn-primary btn-xl page-scroll">BUY</a>
+			<a class="btn btn-primary btn-xl page-scroll">FAQ</a>
 			</center>
 		</div>
 		
