@@ -41,7 +41,7 @@ Some of the pages of the website are not developed:
 
 It's not possible to graphically distinguish between the active and not active links on the website.
 
-We inserted the PROMO devices/SL services and the HIGHLIGHTS Assistance services as  categories on their own inside the devices/Sl services/Assistance Services categories pages.
+We inserted the PROMO devices/SL services and the HIGHLIGHTS Assistance services as  categories on their own inside the devices/SL services/Assistance Services categories pages.
 All the rest of the website structure reflects the one on the P-IDM Schema and the Mock-ups (already delivered) except from the graphics of the pages which is quite different from the Mock-ups one. 
 
 
