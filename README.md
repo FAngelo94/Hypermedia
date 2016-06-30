@@ -19,12 +19,14 @@ CONTENTS:
 
 3)P-IDM Schema
 
+4)Android Mobile app (.apk)
+
 
 NOTES ON THE WEBSITE:
 
 To develop the website we used the "Creative" Bootstrap Template that uses several Bootstrap Frameworks (including premade JavaScript,  JQuery functions, ecc).
 
-All the data is queered from the database  using php functions inside the html pages and the files inside the php folder (the php folder also contains the php file used to connect to the database, used by all the pages).
+All the data is queered from the database  using php functions inside the html pages  (the php folder  contains the php file to connect to the database, used by all the pages and the functions to populate the db).
 
 All the images we used are organized inside the img folder.
 
@@ -32,10 +34,10 @@ All the JavaScript functions are inside the js folder.
 
 Some of the pages of the website are not developed:
 
-1)the "buy" button inside the  device page  ,the  "buy" and "faq" buttons inside the single  SL Service page and  the  assistance@tim.it link at the bottom of the  homepage DO NOT LEAD anywhere
+1)The "buy" button inside the  device page  ,the  "buy" and "faq" buttons inside the single  SL Service page and  the  assistance@tim.it link at the bottom of the  homepage DO NOT LEAD anywhere
 
 
-2)the category Tv&Smart Living of device categories DO NOT contain anything, which means that the link  "Tv and Smart Living" on the Devices Categories page IS NOT an active link.
+2)The category Tv&Smart Living of device categories DO NOT contain anything, which means that the link  "Tv and Smart Living" on the Devices Categories page IS NOT an active link.
 
 It's not possible to graphically distinguish between the active and not active links on the website.
 
